@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Price Calculator</title>
+    <style>
+        /* CSS styles here */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Service Price Calculator</h2>
+        <form name="price-calculator" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="price-calculator">
+
+            <label for="service">Service:</label>
+            <select id="service" name="service">
+                <!-- Options for services -->
+            </select>
+
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link">
+
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone">
+
+            <button type="submit">View Price</button>
+        </form>
+
+        <!-- Rest of your HTML content -->
+
+    </div>
+
+    <script>
+        // JavaScript code here
+
+    </script>
+</body>
+</html>

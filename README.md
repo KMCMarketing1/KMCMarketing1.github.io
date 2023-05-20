@@ -80,6 +80,42 @@
             font-size: 18px;
             font-weight: bold;
         }
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Service Price Calculator</title>
+    <style>
+        /* CSS styles here */
+
+        /* ... */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="instruction-bar">
+            <p><strong>Instructions:</strong> Please follow the steps below to calculate the price and submit your payment:</p>
+            <ol>
+                <li>Select a service from the dropdown menu.</li>
+                <li>Enter the link in the provided input field.</li>
+                <li>Enter the quantity (minimum 1000) in the quantity input field.</li>
+                <li>Provide your phone number.</li>
+                <li>Click the "View Price" button to calculate the price.</li>
+                <li>If the price is displayed, review the bank account information.</li>
+                <li>Upload the payment screenshot.</li>
+                <li>Click the "Submit Payment" button to submit your payment.</li>
+            </ol>
+        </div>
+        <!-- Rest of your HTML content here -->
+    </div>
+    <script>
+        // JavaScript code here
+
+        // ...
+    </script>
+</body>
+</html>
+
     </style>
 </head>
 <body>

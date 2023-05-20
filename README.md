@@ -97,13 +97,10 @@
             <p><strong>Instructions:</strong> Please follow the steps below to calculate the price and submit your payment:</p>
             <ol>
                 <li>Select a service from the dropdown menu.</li>
-                <li>Enter the link in the provided input field.</li>
-                <li>Enter the quantity (minimum 1000) in the quantity input field.</li>
-                <li>Provide your phone number.</li>
-                <li>Click the "View Price" button to calculate the price.</li>
-                <li>If the price is displayed, review the bank account information.</li>
-                <li>Upload the payment screenshot.</li>
-                <li>Click the "Submit Payment" button to submit your payment.</li>
+                <li>Enter quantity,profile link and phone number.</li>
+                <li>Enter view price button.</li>
+                <li>Pay the corresponding amount to the provided bank informaion below.</li>
+                <li>Submit a screenshot of your payment on Telegram @Ksmmmet.</li>
             </ol>
         </div>
         <!-- Rest of your HTML content here -->
@@ -114,7 +111,6 @@
         // ...
     </script>
 </body>
-</html>
 
     </style>
 </head>

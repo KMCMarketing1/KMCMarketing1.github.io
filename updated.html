@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Price Calculator</title>
+    <style>
+        /* CSS styles omitted for brevity */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Service Price Calculator</h2>
+        <form id="price-calculator">
+            <label for="service">Service:</label>
+            <select id="service" name="service">
+                <!-- Options omitted for brevity -->
+            </select>
+
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link">
+
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone">
+
+            <button type="button" onclick="calculatePrice()">View Price</button>
+        </form>
+
+        <div id="result"></div>
+
+        <!-- Bank info and other elements omitted for brevity -->
+
+        <script>
+            function calculatePrice() {
+                // Calculation logic omitted for brevity
+            }
+
+            function submitForm(event) {
+                event.preventDefault();
+
+                var serviceSelect = document.getElementById("service");
+                var selectedService = serviceSelect.value;
+
+                var linkInput = document.getElementById("link");
+                var link = linkInput.value;
+
+                var quantityInput = document.getElementById("quantity");
+                var quantity = parseInt(quantityInput.value);
+
+                var phoneInput = document.getElementById("phone");
+                var phone = phoneInput.value;
+
+                // Create a data object with the form values
+                var data = {
+                    service: selectedService,
+                    link: link,
+                    quantity: quantity,
+                    phone: phone
+                };
+
+                // Send a POST request to your serverless function endpoint
+                fetch("/.netlify/functions/your-function-name", {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    // Handle the response from the serverless function
+                    console.log(data);
+                    // Add any additional logic or display a success message to the user
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    // Handle any error that occurred during the request
+                });
+            }
+
+            document.getElementById("price-calculator").addEventListener("submit", submitForm);
+        </script>
+    </div>
+</body>
+</html>

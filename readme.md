@@ -95,64 +95,64 @@
       // Prices for each service
       switch (selectedService) {
         case "Instagram Followers | No Refill":
-          price = 100;
+          price = 100 / 1000;
           break;
         case "Instagram Impressions":
-          price = 50;
+          price = 50 / 5000;
           break;
         case "Instagram Followers | Stable | Instant":
-          price = 400;
+          price = 400 / 1000;
           break;
         case "Instagram Likes (fast speed)":
-          price = 100;
+          price = 100 / 5000;
           break;
         case "Instagram Likes > [SpeedMedium]":
-          price = 70;
+          price = 70 / 5000;
           break;
         case "Facebook Profile Followers":
-          price = 400;
+          price = 400 / 1000;
           break;
         case "TikTok Followers | slow |":
-          price = 500;
+          price = 500 / 1000;
           break;
         case "TikTok Likes [fastStart]":
-          price = 70;
+          price = 70 / 1000;
           break;
         case "TikTok live streams + likes + Shares + Comments":
-          price = 150;
+          price = 150 / 1000;
           break;
         case "TikTok Views [fastStart]":
-          price = 10;
+          price = 10 / 1000;
           break;
         case "TikTok Shares [fastStart]":
-          price = 20;
+          price = 20 / 1000;
           break;
         case "TikTok Saves":
-          price = 25;
+          price = 25 / 1000;
           break;
         case "YouTube Subscribers [Guaranteed subscribers]":
-          price = 1500;
+          price = 1500 / 1000;
           break;
         case "YouTube Views - Guaranteed views":
-          price = 300;
+          price = 300 / 1000;
           break;
         case "Youtube Likes":
-          price = 100;
+          price = 100 / 1000;
           break;
         case "Youtube Comments Targeted":
-          price = 2500;
+          price = 2500 / 1000;
           break;
         case "Youtube USA Social Shares":
-          price = 350;
+          price = 350 / 1000;
           break;
         case "Telegram Channel Subscribers / Group (Fast)":
-          price = 350;
+          price = 350 / 1000;
           break;
         case "Telegram Post Views [fastStart]":
-          price = 30;
+          price = 30 / 1000;
           break;
         case "Telegram Post Reaction / Comments":
-          price = 500;
+          price = 500 / 1000;
           break;
       }
 
@@ -161,7 +161,7 @@
 
       // Display the result
       var priceResult = document.getElementById("priceResult");
-      priceResult.innerHTML = "Total Price: " + totalPrice + " Birr";
+      priceResult.innerHTML = "Total Price: " + totalPrice.toFixed(2) + " Birr";
     }
   </script>
 </body>

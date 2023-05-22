@@ -84,17 +84,33 @@
 </head>
 <body>
     <div class="container">
-        <h2>KMC SM Marketing</h2>
-        <form name="price-calculator">
-            <label for="service">Select a Service:</label>
+        <h2>Service Price Calculator</h2>
+        <form>
+            <label for="service">Service:</label>
             <select id="service" name="service">
                 <option value="instagram_followers_no_refill">Instagram Followers | No Refill</option>
                 <option value="instagram_impressions">Instagram Impressions</option>
                 <option value="instagram_followers_stable_instant">Instagram Followers | Stable | Instant</option>
-                <!-- Add more options as needed -->
+                <option value="instagram_likes_fast">Instagram Likes (fast speed)</option>
+                <option value="instagram_likes_medium">Instagram Likes > [SpeedMedium]</option>
+                <option value="facebook_profile_followers">Facebook Profile Followers</option>
+                <option value="tiktok_followers_slow">TikTok Followers | slow |</option>
+                <option value="tiktok_likes_faststart">TikTok Likes [fastStart]</option>
+                <option value="tiktok_live_streams_likes_shares_comments">TikTok live streams + likes + Shares + Comments</option>
+                <option value="tiktok_views_faststart">TikTok Views [fastStart]</option>
+                <option value="tiktok_shares_faststart">TikTok Shares [fastStart]</option>
+                <option value="tiktok_saves">TikTok Saves</option>
+                <option value="youtube_subscribers_guaranteed">YouTube Subscribers [Guaranteed subscribers]</option>
+                <option value="youtube_views_guaranteed">YouTube Views - Guaranteed views</option>
+                <option value="youtube_likes">Youtube Likes</option>
+                <option value="youtube_comments_targeted">Youtube Comments Targeted</option>
+                <option value="youtube_usa_social_shares">Youtube USA Social Shares</option>
+                <option value="telegram_channel_subscribers_group_fast">Telegram Channel Subscribers / Group (Fast)</option>
+                <option value="telegram_post_views_faststart">Telegram Post Views [fastStart]</option>
+                <option value="telegram_post_reaction_comments">Telegram Post Reaction / Comments</option>
             </select>
 
-            <label for="link">Insert Social Media Link:</label>
+            <label for="link">Link:</label>
             <input type="text" id="link" name="link">
 
             <label for="quantity">Quantity:</label>
@@ -116,4 +132,134 @@
 
         <div id="payment-option">
             <p>Second Payment Option:</p>
-           
+            <p>Telebirr</p>
+            <p>Account: 0911812380</p>
+        </div>
+
+        <div id="payment-screenshot">
+            <label for="screenshot">Upload Payment Screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot">
+        </div>
+
+        <div id="submit-payment-btn">
+            <button type="button" onclick="submitPayment()" disabled>Submit Payment</button>
+        </div>
+
+        <div id="payment-review-info"></div>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            var serviceSelect = document.getElementById("service");
+            var selectedService = serviceSelect.value;
+
+            var linkInput = document.getElementById("link");
+            var link = linkInput.value;
+
+            var quantityInput = document.getElementById("quantity");
+            var quantity = parseInt(quantityInput.value);
+
+            if (quantity < 1000) {
+                document.getElementById("result").innerHTML = "Minimum 1000";
+                return;
+            }
+
+            var price = 0;
+
+            switch (selectedService) {
+                case "instagram_followers_no_refill":
+                    price = quantity / 1000 * 100;
+                    break;
+                case "instagram_impressions":
+                    price = quantity / 5000 * 50;
+                    break;
+                case "instagram_followers_stable_instant":
+                    price = quantity / 1000 * 400;
+                    break;
+                case "instagram_likes_fast":
+                    price = quantity / 5000 * 100;
+                    break;
+                case "instagram_likes_medium":
+                    price = quantity / 5000 * 70;
+                    break;
+                case "facebook_profile_followers":
+                    price = quantity / 1000 * 400;
+                    break;
+                case "tiktok_followers_slow":
+                    price = quantity / 1000 * 500;
+                    break;
+                case "tiktok_likes_faststart":
+                    price = quantity / 1000 * 70;
+                    break;
+                case "tiktok_live_streams_likes_shares_comments":
+                    price = quantity / 1000 * 150;
+                    break;
+                case "tiktok_views_faststart":
+                    price = quantity / 1000 * 10;
+                    break;
+                case "tiktok_shares_faststart":
+                    price = quantity / 1000 * 20;
+                    break;
+                case "tiktok_saves":
+                    price = quantity / 1000 * 25;
+                    break;
+                case "youtube_subscribers_guaranteed":
+                    price = quantity / 1000 * 1500;
+                    break;
+                case "youtube_views_guaranteed":
+                    price = quantity / 1000 * 300;
+                    break;
+                case "youtube_likes":
+                    price = quantity / 1000 * 100;
+                    break;
+                case "youtube_comments_targeted":
+                    price = quantity / 1000 * 2500;
+                    break;
+                case "youtube_usa_social_shares":
+                    price = quantity / 1000 * 350;
+                    break;
+                case "telegram_channel_subscribers_group_fast":
+                    price = quantity / 1000 * 350;
+                    break;
+                case "telegram_post_views_faststart":
+                    price = quantity / 1000 * 30;
+                    break;
+                case "telegram_post_reaction_comments":
+                    price = quantity / 1000 * 500;
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = "Price: " + price.toFixed(2) + " ETB";
+        }
+
+        function submitPayment() {
+            var linkInput = document.getElementById("link");
+            var link = linkInput.value;
+
+            var screenshotInput = document.getElementById("screenshot");
+            var screenshot = screenshotInput.value;
+
+            if (link === "" || screenshot === "") {
+                return;
+            }
+
+            document.getElementById("payment-review-info").innerHTML = "Payment in Review";
+        }
+
+        // Enable/disable submit button based on link and screenshot inputs
+        document.getElementById("link").addEventListener("input", toggleSubmitButton);
+        document.getElementById("screenshot").addEventListener("input", toggleSubmitButton);
+
+        function toggleSubmitButton() {
+            var linkInput = document.getElementById("link");
+            var link = linkInput.value;
+
+            var screenshotInput = document.getElementById("screenshot");
+            var screenshot = screenshotInput.value;
+
+            var submitButton = document.getElementById("submit-payment-btn").getElementsByTagName("button")[0];
+            submitButton.disabled = link === "" || screenshot === "";
+        }
+    </script>
+</body>
+</html>

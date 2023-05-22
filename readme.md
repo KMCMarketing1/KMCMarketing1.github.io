@@ -3,28 +3,95 @@
 <head>
     <title>Service Price Calculator</title>
     <style>
-        /* CSS styles here */
-        /* ... */
+        body {
+            background-color: black;
+            color: yellow;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid yellow;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #bank-info {
+            background-color: yellow;
+            color: black;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #payment-option {
+            margin-top: 20px;
+        }
+
+        #payment-option p {
+            margin-bottom: 5px;
+        }
+
+        #payment-screenshot {
+            margin-top: 20px;
+        }
+
+        #submit-payment-btn {
+            margin-top: 20px;
+        }
+
+        #payment-review-info {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>KMC SM Marketing </h2>
-        <div class="instruction-bar">
-            <p><strong>Instructions:</strong> Please follow the steps below to calculate the price and submit your payment:</p>
-            <ol>
-                <li>Select a service from the dropdown menu.</li>
-                <li>Enter quantity, profile link, and phone number.</li>
-                <li>Click the "View Price" button.</li>
-                <li>Pay the corresponding amount to the provided bank information below.</li>
-                <li>Submit a screenshot of your payment on Telegram @Ksmmmet.</li>
-            </ol>
-        </div>
-
-        <form>
+        <h2>KMC SM Marketing</h2>
+        <form name="price-calculator">
             <label for="service">Select a Service:</label>
             <select id="service" name="service">
-                <!-- Options here -->
+                <option value="instagram_followers_no_refill">Instagram Followers | No Refill</option>
+                <option value="instagram_impressions">Instagram Impressions</option>
+                <option value="instagram_followers_stable_instant">Instagram Followers | Stable | Instant</option>
+                <!-- Add more options as needed -->
             </select>
 
             <label for="link">Insert Social Media Link:</label>
@@ -49,41 +116,4 @@
 
         <div id="payment-option">
             <p>Second Payment Option:</p>
-            <p>Telebirr</p>
-            <p>Account: 0911812380</p>
-        </div>
-
-        <div id="payment-screenshot">
-            <label for="screenshot">Upload Payment Screenshot:</label>
-            <input type="file" id="screenshot" name="screenshot">
-        </div>
-
-        <div id="submit-payment-btn">
-            <button type="button" onclick="submitPayment()" disabled>Submit Payment</button>
-        </div>
-
-        <div id="payment-review-info"></div>
-    </div>
-
-    <script>
-        function calculatePrice() {
-            // JavaScript code for calculating the price
-            // ...
-        }
-
-        function submitPayment() {
-            // JavaScript code for submitting the payment
-            // ...
-        }
-
-        function toggleSubmitButton() {
-            // JavaScript code for enabling/disabling the submit button
-            // ...
-        }
-
-        // Enable/disable submit button based on link and screenshot inputs
-        document.getElementById("link").addEventListener("input", toggleSubmitButton);
-        document.getElementById("screenshot").addEventListener("input", toggleSubmitButton);
-    </script>
-</body>
-</html>
+           
